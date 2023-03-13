@@ -39,7 +39,7 @@ app.use(express.json());
 
 app.use(cors());
 
-app.post('/upload',  upload.single('image'), (req, res) => {
+app.post('/upload', upload.single('image'), (req, res) => {
     res.json ({
         url: `/uploads/${req.file.originalname}`,
     })
@@ -57,7 +57,7 @@ app.patch('/auth/me', chekAuth, editUser, handleValidationErrors, UserControler.
 
 app.get('/tags',  PostControler.getLastTags);
 
-app.post('/posts', chekAuth, postCreateValidations, handleValidationErrors, PostControler.create);
+app.post('/posts', postCreateValidations, handleValidationErrors, PostControler.create);
 
 app.post('/posts/comments', chekAuth, commentsCreateValidations, handleValidationErrors, CommentsControler.createComment);
 
