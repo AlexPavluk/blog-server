@@ -19,12 +19,12 @@ export const loginValidation = [
 ];
 
 export const postCreateValidations = [
-    body('title', 'Введите заголовок статьи').isLength({min:3}).isString(),
-    body('text', 'Введите текст статьи').isLength({min:3}).isString(),
-    body('tags', 'Неверный формат тегов (укажите масив)').optional().isString(),
-    body('imageUrl', 'Неверная ссылка на изображение').optional().isString(),
+    body('title', 'Enter the title of the post').isLength({min:3}).isString(),
+    body('text', 'Enter the text of the post').isLength({min:3}).isString(),
+    body('tags', 'Incorrect tag format (specify array)').optional().isString(),
+    body('imageUrl', 'Incorrect image link').optional().isString(),
 ];
 
 export const commentsCreateValidations = [
-    body('comment', 'Введите текст комментария').isLength({min:3}).isString(),
+    body('comment', 'Enter the text of the comment').isLength({min:3}).isString(),
 ];

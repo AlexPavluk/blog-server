@@ -43,7 +43,7 @@ export const register = async (req, res) => {
     } catch (err) {
         console.log(err)
         return res.status(500).json({
-            message: 'Не удалаось зарегистрироватся',
+            message: "Couldn't register",
         })
     }
 }
@@ -55,7 +55,7 @@ export const login = async (req, res) => {
 
         if (!user) {
             return res.status(404).json({
-                message: 'Пользователь не найтен'
+                message: 'User not found'
             })
         }
 
@@ -64,7 +64,7 @@ export const login = async (req, res) => {
 
         if (!isValidPass) {
             return res.status(404).json({
-                message: 'Неверный логин или пароль',
+                message: 'Invalid login or password',
             });
         }
 
@@ -88,7 +88,7 @@ export const login = async (req, res) => {
 
     } catch (err) {
         res.status(500)({
-            message: 'Не удалаось авторизоваться',
+            message: "Couldn't log in",
         })
     }
 }
@@ -99,7 +99,7 @@ export const getUser = async  (req, res) => {
 
             if (!user) {
                 return res.status(404).json({
-                    message: 'Пользователь не найден'
+                    message: 'User not found'
                 });
             }
             const { passwordHash, ...userData } = user._doc
@@ -128,14 +128,14 @@ export const getOne = async (req, res) => {
                 if (err) {
                     console.log(err)
                     return res.status(500).json({
-                        message: 'Не удалаось вернуть статью',
+                        message: "User not found",
                     })
                 }
 
                 if (!doc) {
                     console.log(err)
                     return res.status(404).json({
-                        message: 'Статья не найдена',
+                        message: 'User not found',
                     })
                 }
 
@@ -147,7 +147,7 @@ export const getOne = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось создать статью',
+            message: "Couldn't create user",
         })
     }
 }
@@ -158,7 +158,7 @@ export const getMe = async (req, res) => {
 
         if (!user) {
             return res.status(404).json({
-                message: 'Пользователь не найден'
+                message: 'User not found'
             });
         }
         const { passwordHash, ...userData } = user._doc
@@ -168,7 +168,7 @@ export const getMe = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500)({
-            message: 'Нет доступа',
+            message: 'No access',
         })
     }
 };
@@ -196,7 +196,7 @@ export const update = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось обновить статью',
+            message: 'Could not change the user',
         })
     }
 }

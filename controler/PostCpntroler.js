@@ -16,7 +16,7 @@ export const create = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось создать статью',
+            message: "Couldn't create a post",
         })
     };
 }
@@ -36,7 +36,7 @@ export const getLastTags = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось получить статьи',
+            message: "Couldn't get the tags",
         })
     }
 }
@@ -49,7 +49,7 @@ export const getAll = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось получить статьи',
+            message: "Couldn't get the posts",
         })
     }
 }
@@ -62,7 +62,7 @@ export const getUserPosts = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось получить статьи',
+            message: "Couldn't get the posts",
         })
     }
 }
@@ -88,14 +88,14 @@ export const getOne = async (req, res) => {
                 if (err) {
                     console.log(err)
                     return res.status(500).json({
-                        message: 'Не удалаось вернуть статью',
+                        message: "Couldn't get the post",
                     })
                 }
 
                 if (!doc) {
                     console.log(err)
                     return res.status(404).json({
-                        message: 'Статья не найдена',
+                        message: 'Post not found',
                     })
                 }
 
@@ -107,7 +107,7 @@ export const getOne = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось создать статью',
+            message: "Couldn't create a post",
         })
     }
 }
@@ -125,14 +125,14 @@ export const remove = async (req, res) => {
                 if (err) { 
                     console.log(err)
                     return res.status(500).json({
-                        message: 'Не удалаось удалить статью',
+                        message: "Couldn't delete the post",
                     })
                 }
 
                 if (!doc) {
                     console.log(err)
                     return res.status(404).json({
-                        message: 'Статья не найдена',
+                        message: 'Post not found',
                     })
                 }
 
@@ -144,7 +144,7 @@ export const remove = async (req, res) => {
     } catch (err) {
         console.log(err)
          res.status(500).json({
-            message: 'Не удалаось получить статьи',
+            message: "Couldn't get the post",
         })
     }
 }
@@ -172,7 +172,7 @@ export const update = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось обновить статью',
+            message: "Couldn't update the post",
         })
     }
 }

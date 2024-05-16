@@ -18,7 +18,7 @@ export const createComment = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось создать статью',
+            message: "Couldn't create a comment",
         })
     };
 }
@@ -32,7 +32,7 @@ export const getComment = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалаось получить статьи',
+            message: "Couldn't get the comments",
         })
     }
 }
