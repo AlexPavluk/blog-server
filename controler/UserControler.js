@@ -1,7 +1,6 @@
 import * as dotenv from 'dotenv'
 dotenv.config()
 import jwt from 'jsonwebtoken';
-import jwt_decode from "jwt-decode";
 import bcrypt from 'bcrypt';
 
 import UserModel from '../models/User.js';
@@ -176,17 +175,12 @@ export const getMe = async (req, res) => {
 
 export const update = async (req, res) => {
     try {
-
-        //const userId = req.userId;
-
-
-
+        const user = await UserModel.findById(req.userId);
             await UserModel.updateOne(
                 {
                     _id: req.userId
                 },
                 {
-
                     email: req.body.email,
                     fullName: req.body.fullName,
                     avatarUrl: req.body.avatarImg,
@@ -195,10 +189,9 @@ export const update = async (req, res) => {
 
             )
 
-        res.json({
-            success:true
-        });
+            const {...userData} = user._doc
 
+        res.json(userData);
 
     } catch (err) {
         console.log(err)

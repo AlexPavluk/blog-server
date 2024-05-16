@@ -12,8 +12,6 @@ export const createComment = async (req, res) => {
             post: postId,
         });
 
-
-
         const comments = await doc.save();
 
         res.json(comments)
